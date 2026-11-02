@@ -521,3 +521,13 @@ footer { background: var(--ink); color: rgba(255,248,239,.8); padding: 48px 0 32
 @media (max-width: 900px) { .pillars { grid-template-columns: 1fr; } }
 @media (max-width: 600px) { #education .projects { grid-template-columns: 1fr; } }
 #education .project .thumb { aspect-ratio: 16 / 9; }
+.event-feature { display: grid; grid-template-columns: 380px 1fr; gap: 0; border: 3px solid var(--ink); border-radius: 28px; overflow: hidden; background: var(--paper); box-shadow: 10px 10px 0 var(--orange); }
+.ef-poster { background: #1a0b3a; display: flex; align-items: center; }
+.ef-poster img { width: 100%; height: auto; display: block; }
+.ef-body { padding: 32px 36px; display: flex; flex-direction: column; gap: 12px; align-items: flex-start; }
+.ef-body .event-date { border-radius: 16px; border: 2px solid var(--ink); }
+.ef-body h3 { font-family: var(--serif); font-size: clamp(24px, 2.6vw, 34px); line-height: 1.15; margin: 0; }
+.ef-body p { margin: 0; }
+.ef-body .meta { color: var(--muted); font-size: 15.5px; }
+.ef-body .btn { margin-top: 8px; }
+@media (max-width: 900px) { .event-feature { grid-template-columns: 1fr; } .ef-poster img { max-height: 520px; } .ef-body { padding: 24px; } }
