@@ -11,7 +11,10 @@
   var saved = null;
   try { saved = localStorage.getItem("cu-lang"); } catch (e) {}
   var fromUrl = new URLSearchParams(location.search).get("lang");
-  setLang(fromUrl || saved || "uk");
+  // First visit: Ukrainian/Russian browsers get Ukrainian, everyone else English.
+  var nav = (navigator.languages && navigator.languages[0]) || navigator.language || "";
+  var auto = /^(uk|ru)/i.test(nav) ? "uk" : "en";
+  setLang(fromUrl || saved || auto);
 
   document.querySelectorAll(".lang [data-set]").forEach(function (b) {
     b.addEventListener("click", function () { setLang(b.getAttribute("data-set")); });
