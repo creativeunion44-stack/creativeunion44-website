@@ -47,5 +47,11 @@
     items.forEach(function (el) { el.classList.add("in"); });
   }
 
+  // hero video: respect reduced-motion preference
+  var hv = document.querySelector(".hero-video video");
+  if (hv && window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    hv.removeAttribute("autoplay"); hv.pause();
+  }
+
   document.getElementById("year").textContent = new Date().getFullYear();
 })();
